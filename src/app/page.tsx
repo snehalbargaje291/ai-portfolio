@@ -34,7 +34,7 @@ export default function Home() {
               alt="my photo"
               height={300}
               width={300}
-              className="aspect-square rounded-full border-2 object-cover shadow-md dark:border-foreground"
+              className="aspect-square rounded-full border object-cover shadow-xl"
             />
           </div>
         </section>
