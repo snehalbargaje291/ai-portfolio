@@ -2,6 +2,8 @@ import { DragCards } from '@/components/DragCards';
 import HoverTiltCard from '@/components/HoverTiltCard';
 import Projects from '@/components/Projects';
 import { Skills } from '@/components/Skills';
+import { StickyScrollRevealDemo } from '@/components/StickeyScroll';
+import { StickyScroll } from '@/components/ui/stickey-scroll-reveal';
 import React from 'react';
 
 const About = () => {
@@ -24,6 +26,7 @@ const About = () => {
           <HoverTiltCard/>
           {/* <Projects/> */}
         </div>
+        <StickyScrollRevealDemo/>
       </section>
 
       <section className="mb-8">
