@@ -35,5 +35,8 @@ export async function generateEmbeddingsCollection(){
 
   const db =  client.db(endpoint);
 
-  return db.createCollection(collection);
+
+ return db.collection(collection);
+
+  // return db.createCollection(collection);
 }

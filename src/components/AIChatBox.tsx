@@ -121,7 +121,7 @@ const AIChatBox = ({ open, onClose }: AIChatBoxProps) => {
           <button
             type="submit"
             className="p-2 disabled:opacity-50"
-            disabled={isLoading || input.length === 0}
+            // disabled={isLoading || input.length === 0}
             title="Send message"
           >
             <SendHorizonal size={24} />
