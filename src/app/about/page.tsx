@@ -57,7 +57,6 @@ const About = () => {
           {experiences.map((exp, index) => (
             <HoverTiltCard key={index} {...exp} />
           ))}
-          {/* <Projects/> */}
         </div>
       </section>
     </div>
