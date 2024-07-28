@@ -1,10 +1,11 @@
-import { AstraDB } from "@datastax/astra-db-ts";
+import { DataAPIClient } from "@datastax/astra-db-ts";
 import { AstraDBVectorStore } from "@langchain/community/vectorstores/astradb";
 import { OpenAIEmbeddings } from "@langchain/openai";
 
 const endpoint = process.env.ASTRA_DB_ENDPOINT || "";
 const token = process.env.ASTRA_DB_APPLICATION_TOKEN || "";
 const collection = process.env.ASTRA_DB_COLLECTION || "";
+
 
 if (!endpoint || !token || !collection) {
   throw new Error("Missing required env variables");
@@ -30,5 +31,9 @@ export async function getVectorStore() {
 }
 
 export async function generateEmbeddingsCollection(){
-    return new AstraDB(token, endpoint).collection(collection)
+  const client = new DataAPIClient(token);
+
+  const db =  client.db(endpoint);
+
+  return db.createCollection(collection);
 }
