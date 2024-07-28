@@ -122,6 +122,7 @@ const AIChatBox = ({ open, onClose }: AIChatBoxProps) => {
             type="submit"
             className="p-2 disabled:opacity-50"
             // disabled={isLoading || input.length === 0}
+            // this needs to be fixed
             title="Send message"
           >
             <SendHorizonal size={24} />
