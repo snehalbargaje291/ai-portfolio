@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "generate": "npx ts-node ./scripts/generate.ts",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@datastax/astra-db-ts": "^0.1.4",
+    "@datastax/astra-db-ts": "^1.4.1",
+    "@langchain/community": "^0.2.20",
     "@langchain/openai": "^0.0.13",
     "@radix-ui/react-hover-card": "^1.1.1",
     "@upstash/redis": "^1.28.2",
@@ -44,6 +46,9 @@
     "typescript": "^5"
   },
   "overrides": {
+    "@langchain/core": "0.1.20"
+  },
+  "resolutions": {
     "@langchain/core": "0.1.20"
   }
 }

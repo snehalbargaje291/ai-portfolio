@@ -9,6 +9,8 @@ import { Skills } from "@/components/Skills";
 
 export const metadata: Metadata = {
   title: "Snehal Bargaje - my smart portfolio ",
+  description:
+    "Snehal Bargaje is a frontend developer specializing in responsive web experiences using Angular, React, Next.js, Bootstrap, and Tailwind.",
 };
 
 export default function Home() {
