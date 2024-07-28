@@ -1,10 +1,9 @@
 import React from 'react';
-import { DragCards } from '@/components/DragCards';
 import HoverTiltCard from '@/components/HoverTiltCard';
 import { Skills } from '@/components/Skills';
-import H1 from '@/components/ui/H1';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { TextRevealCard } from '@/components/ui/text-reveal';
+import CardSection from '@/components/CardSection';
 
 const experiences = [
   {
@@ -48,7 +47,7 @@ const About = () => {
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-        <DragCards/>
+        <CardSection/>
       </section>
 
       <section className="mb-8 mx-4">
