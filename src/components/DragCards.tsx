@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
+import Link from "next/link";
 
 export const DragCards: React.FC = () => {
   return (
@@ -16,70 +17,81 @@ export const DragCards: React.FC = () => {
 
 const cardData = [
   {
-    src: "https://images.unsplash.com/photo-1635373670332-43ea883bb081?q=80&w=2781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Example image",
+    src: "/Projects/ai-mock-interview.png",
+    description: "ai-mock-interview",
     rotate: "6deg",
     top: "20%",
     left: "25%",
     className: "w-36 md:w-56",
-    title: "Software Development Intern",
-    company: "Esparse Matrix Solution Pvt Ltd",
-    duration: "4 months",
+    title: "AI Mock Interview Platform",
+    techstack: "Next.js, Tailwind CSS, Clerk Auth, Gemini API",
+    link: "https://ai-mock-interview-ten.vercel.app/",
   },
   {
-    src: "https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Example image",
+    src: "/Projects/vite+react-Portfolio.png",
+    description: "vite+react-Portfolio",
     rotate: "12deg",
     top: "45%",
     left: "60%",
     className: "w-24 md:w-48",
-    title: "Frontend Developer Intern",
-    company: "Freelance",
-    duration: "3 months",
+    title: "Portfolio-II",
+    techstack: "Vite, React, Tailwind CSS",
+    link: "https://portfolio-snehalbargaje.vercel.app/",
   },
   {
-    src: "https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Example image",
+    src: "/Projects/angular-portfolio.png",
+    description: "angular-portfolio",
     rotate: "-6deg",
     top: "20%",
     left: "40%",
     className: "w-52 md:w-80",
-    title: "Full Stack Developer",
-    company: "Startup",
-    duration: "6 months",
+    title: "Portfolio-I",
+    techstack: "Angular, Bootstrap",
+    link: "https://portfolio-snehal-bargaje.vercel.app/",
   },
   {
-    src: "https://images.unsplash.com/photo-1620428268482-cf1851a36764?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Example image",
+    src: "/Projects/bookshelf.png",
+    description: "bookshelf",
     rotate: "8deg",
     top: "50%",
     left: "40%",
     className: "w-48 md:w-72",
-    title: "UI/UX Designer",
-    company: "Creative Agency",
-    duration: "5 months",
+    title: "Bookshelf ",
+    techstack: "React, Tailwind CSS, Google Books API",
+    link: "https://library-and-book-shelf.vercel.app/",
   },
   {
-    src: "https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Example image",
+    src: "/Projects/DekstopForm-CRUD.png",
+    description: "DekstopForm-CRUD",
     rotate: "18deg",
     top: "20%",
     left: "65%",
     className: "w-40 md:w-64",
-    title: "Backend Developer",
-    company: "Tech Corp",
-    duration: "7 months",
+    title: "Asp.net Core CRUD",
+    techstack: "Asp.net , C# , SQL Server",
+    link: "https://github.com/snehalbargaje291/asp.net",
   },
   {
-    src: "https://images.unsplash.com/photo-1622313762347-3c09fe5f2719?q=80&w=2640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Example image",
+    src: "/Projects/eComm-react.png",
+    description: "eComm-react",
     rotate: "-3deg",
     top: "35%",
     left: "55%",
     className: "w-24 md:w-48",
-    title: "Product Manager",
-    company: "Innovative Solutions",
-    duration: "1 year",
+    title: "E-Commerce ",
+    techstack: "React, Tailwind CSS, FakeAPI",
+    link: "https://ecommerce-chi-woad.vercel.app/",
+  },
+  {
+    src: "/Projects/intern-startup.png",
+    description: "intern-startup",
+    rotate: "-3deg",
+    top: "35%",
+    left: "55%",
+    className: "w-24 md:w-48",
+    title: "StartupIdea (Internship)",
+    techstack: "Angular, Bootstrap",
+    link: "https://startup-rbbi.vercel.app/",
   },
 ];
 
@@ -98,27 +110,27 @@ const Cards: React.FC = () => {
 interface CardProps {
   containerRef: React.RefObject<HTMLDivElement>;
   src: string;
-  alt: string;
+  description: string;
   top: string;
   left: string;
   rotate: string;
   className?: string;
   title: string;
-  company: string;
-  duration: string;
+  techstack: string;
+  link: string;
 }
 
 const Card: React.FC<CardProps> = ({
   containerRef,
   src,
-  alt,
+  description,
   top,
   left,
   rotate,
   className,
   title,
-  company,
-  duration,
+  techstack,
+  link,
 }) => {
   const [zIndex, setZIndex] = useState<number>(0);
 
@@ -150,7 +162,7 @@ const Card: React.FC<CardProps> = ({
         zIndex,
       }}
       className={twMerge(
-        "drag-elements absolute w-48 bg-neutral-200 p-4 pb-8",
+        "drag-elements absolute w-48 bg-background rounded-lg p-4 pb-8",
         className
       )}
       drag
@@ -158,13 +170,13 @@ const Card: React.FC<CardProps> = ({
       dragElastic={0.65}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className="absolute inset-0 bg-cover bg-center rounded-lg opacity-60 "
         style={{ backgroundImage: `url(${src})` }}
       />
-      <div className="relative z-10 text-white">
+      <div className="relative z-10 font-semibold">
         <h3 className="text-xl font-bold">{title}</h3>
-        <p className="text-sm">{company}</p>
-        <p className="text-xs">{duration}</p>
+        <p className="text-sm">{techstack}</p>
+        <Link href={link} className="text-blue-500 hover:underline">Link</Link>
       </div>
     </motion.div>
   );

@@ -15,7 +15,7 @@ const Footer = () => {
           <ul className="mt-8 flex justify-center gap-6 sm:mt-0 lg:justify-end">
             <li>
               <Link
-                href="#"
+                href="https://github.com/snehalbargaje291?tab=repositories"
                 target="_blank"
               >
                 <span className="sr-only">Github</span>
@@ -25,7 +25,7 @@ const Footer = () => {
 
             <li>
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/snehal-bargaje-o2910/"
                 target="_blank"
               >
                 <span className="sr-only">LinkedIn</span>
@@ -35,7 +35,7 @@ const Footer = () => {
 
             <li>
               <Link
-                href="#"
+                href="mailto:snehal.bargaje291@gmail.com"
                 target="_blank"
               >
                 <span className="sr-only">Mail</span>

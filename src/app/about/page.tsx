@@ -14,7 +14,7 @@ const experiences = [
     description: "Developed responsive web applications.",
     techStack: "Nextjs, Tailwind CSS",
     link: "https://botbyte.in/",
-    github: "https://github.com/example",
+    github: "https://github.com/snehalbargaje291",
   },
   {
     position: "Software Development Intern",
@@ -22,8 +22,8 @@ const experiences = [
     duration: "4 months",
     description: "Worked on several web development projects.",
     techStack: "Angular, React, Bootstrap, Tailwind CSS",
-    link: "https://example2.com",
-    github: "https://github.com/example2",
+    link: "https://startup-rbbi.vercel.app/",
+    github: "https://github.com/snehalbargaje291",
   },
 ];
 const words = `Your Vision, My Code`;
