@@ -1,41 +1,64 @@
+import React from 'react';
 import { DragCards } from '@/components/DragCards';
 import HoverTiltCard from '@/components/HoverTiltCard';
-import Projects from '@/components/Projects';
 import { Skills } from '@/components/Skills';
-import { StickyScrollRevealDemo } from '@/components/StickeyScroll';
-import { StickyScroll } from '@/components/ui/stickey-scroll-reveal';
-import React from 'react';
+import H1 from '@/components/ui/H1';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+import { TextRevealCard } from '@/components/ui/text-reveal';
 
+const experiences = [
+  {
+    position: "Frontend Developer Intern",
+    company: "Botbyte.in",
+    duration: "2 months",
+    description: "Developed responsive web applications.",
+    techStack: "Nextjs, Tailwind CSS",
+    link: "https://botbyte.in/",
+    github: "https://github.com/example",
+  },
+  {
+    position: "Software Development Intern",
+    company: "eSparse Matrix Solution Pvt Ltd",
+    duration: "4 months",
+    description: "Worked on several web development projects.",
+    techStack: "Angular, React, Bootstrap, Tailwind CSS",
+    link: "https://example2.com",
+    github: "https://github.com/example2",
+  },
+];
+const words = `Your Vision, My Code`;
 const About = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
-      <section className="mb-8">
-        <h1 className="text-3xl font-bold mb-4">About Me</h1>
-        <p className="text-lg mb-4">
+    <div className="max-w-5xl mx-auto px-4">
+      <section className="mb-8 flex justify-center items-center flex-col gap-4">
+        <TextRevealCard text="About Me" revealText={words} />
+        <TextGenerateEffect words={words} className='lg:hidden'/>
+        <p className="text-md">
           Hello! I'm Snehal Bargaje, a passionate frontend developer with a strong background in building responsive and engaging web applications. I specialize in working with modern web technologies like React, Next.js, and Tailwind CSS.
         </p>
-        <p className="text-lg mb-4">
+        <p className="text-md">
           With a background in Computer Applications and hands-on experience from various projects and internships, I strive to create intuitive and visually appealing user experiences. I am always eager to learn new technologies and improve my skills.
         </p>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
-          <HoverTiltCard/>
-          <HoverTiltCard/>
-          {/* <Projects/> */}
-        </div>
-        <StickyScrollRevealDemo/>
+      <section>
+        <Skills/>
       </section>
 
+
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
         <DragCards/>
       </section>
 
-      <section>
-        <Skills/>
+      <section className="mb-8 mx-4">
+        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0'>
+          {experiences.map((exp, index) => (
+            <HoverTiltCard key={index} {...exp} />
+          ))}
+          {/* <Projects/> */}
+        </div>
       </section>
     </div>
   );
