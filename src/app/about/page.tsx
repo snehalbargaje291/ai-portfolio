@@ -30,7 +30,7 @@ const About = () => {
   return (
     <div className="max-w-5xl mx-auto px-4">
       <section className="mb-8 flex justify-center items-center flex-col gap-4">
-        <TextRevealCard text="About Me" revealText={words} />
+        <TextRevealCard text={words} revealText='About Me' />
         {/* <TextGenerateEffect words={words} className='lg:hidden'/> */}
         <p className="text-md">
           Hello! I'm Snehal Bargaje, a passionate frontend developer with a strong background in building responsive and engaging web applications. I specialize in working with modern web technologies like React, Next.js, and Tailwind CSS.
